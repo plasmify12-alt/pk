@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon: Crystal Legend</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    #container {
+      position: relative;
+      display: inline-block;
+      box-shadow: 0 0 40px rgba(80, 140, 255, 0.4);
+    }
+    #gameCanvas {
+      display: block;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      cursor: none;
+    }
+    #controls {
+      color: #556;
+      font-size: 11px;
+      font-family: monospace;
+      margin-top: 8px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <canvas id="gameCanvas" width="640" height="448"></canvas>
+    <div id="controls">WASD: Move &nbsp;|&nbsp; Z/Enter: Action &nbsp;|&nbsp; X/Esc: Cancel/Menu &nbsp;|&nbsp; 1-4: Battle moves</div>
+  </div>
+
+  <!-- Game scripts (loaded in dependency order) -->
+  <script src="src/sprites.js"></script>
+  <script src="src/map.js"></script>
+  <script src="src/world.js"></script>
+  <script src="src/player.js"></script>
+  <script src="src/pokemon.js"></script>
+  <script src="src/battle.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
